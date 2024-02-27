@@ -3,8 +3,8 @@
     --desat-red: hsl(0, 36%, 70%);
     --soft-red: hsl(0, 93%, 68%);
     --dk-gry-red: hsl(0, 6%, 24%);
-    --grad-1: Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
-    --grad-2: Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%);
+    --grad-1: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
+    --grad-2: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
 }
 
 /* Global component styles */
@@ -13,28 +13,104 @@ dl dd, blockquote, figure {
     margin: 0;
 }
 
+html {
+    background-image: linear-gradient(135deg, var(--grad-1));
+    background-size: cover;
+}
+
 body {
     font-family: 'Josefin Sans';
 }
 
 /* Desktop styles */
-.content-and-hero {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
+.content-and-image {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+}
+
+.bg-image {
+    display: inherit;
+    background: no-repeat center/100vh url('./images/bg-pattern-desktop.svg');
 }
 
 .nav-and-content {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    max-width: 28rem;
+    margin: 4rem;
+    justify-self: center;
+}
+
+.content-and-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
+}
+
+.hero {
+    font-size: 64px;
+    text-transform: uppercase;
+    letter-spacing: 16px;
+    line-height: 1.1;
+    color: var(--dk-gry-red)
+}
+
+.thin-hero {
+    font-weight: 300;
+    color: var(--desat-red);
+}
+
+.hero-copy {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--desat-red);
 }
 
 .email-form {
     display: flex;
     flex-direction: row;
+    position: relative;
+    align-items: center;
+    margin-top: 1rem;
+
+    padding: 1.25rem 2rem;
+    border: 1px solid var(--desat-red);
+    border-radius: 20rem;
+}
+
+.email-input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: none;
+}
+
+.email-input::placeholder {
+    font-family: 'Josefin Sans';
+    color: hsla(0, 36%, 70%, 0.795);
+    font-size: 16px;
+}
+
+.email-input {
+    background-color: transparent;
+}
+
+.email-input:focus {
+    font-family: 'Josefin Sans';
+    font-size: 16px;
+    color: var(--dk-gry-red);
 }
 
 .button {
-    background-color: var(--desat-red);
+    background-image: linear-gradient(135deg, var(--grad-2));
+    position: absolute;
+    right: 0;
+    padding: 1.1rem 2.75rem;
+    border-radius: 10rem;
+}
+
+.hero-image {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
 }
