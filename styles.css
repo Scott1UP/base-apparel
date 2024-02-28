@@ -5,9 +5,11 @@
     --dk-gry-red: hsl(0, 6%, 24%);
     --grad-1: hsl(0, 0%, 100%), hsl(0, 100%, 98%);
     --grad-2: hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+    --grad-3:  hsl(0, 100%, 93%), hsl(0, 92%, 85%);
 }
 
-/* Global component styles */
+
+/* Global styles */
 body, h1, h2, h3, h4, h5, h6, p,
 dl dd, blockquote, figure {
     margin: 0;
@@ -22,6 +24,7 @@ body {
     font-family: 'Josefin Sans';
 }
 
+
 /* Desktop styles */
 .content-and-image {
     display: grid;
@@ -30,7 +33,9 @@ body {
 
 .bg-image {
     display: inherit;
-    background: no-repeat center/100vh url('./images/bg-pattern-desktop.svg');
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
 }
 
 .nav-and-content {
@@ -48,9 +53,9 @@ body {
 }
 
 .hero {
-    font-size: 64px;
+    font-size: 4rem; 
     text-transform: uppercase;
-    letter-spacing: 16px;
+    letter-spacing: 1rem;
     line-height: 1.1;
     color: var(--dk-gry-red)
 }
@@ -61,7 +66,7 @@ body {
 }
 
 .hero-copy {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     color: var(--desat-red);
 }
@@ -97,20 +102,92 @@ body {
 
 .email-input:focus {
     font-family: 'Josefin Sans';
-    font-size: 16px;
+    font-size: 1rem;
     color: var(--dk-gry-red);
 }
 
 .button {
+    display: flex;
+    justify-items: center;
+    cursor: pointer;
     background-image: linear-gradient(135deg, var(--grad-2));
     position: absolute;
     right: 0;
-    padding: 1.1rem 2.75rem;
+    padding: 1.25rem 2.75rem;
     border-radius: 10rem;
+    box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.5);
+    transition: all .25s ease-out;
+}
+
+.button:hover {
+    background-image: linear-gradient(135deg, var(--grad-3));
+    box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.824);
 }
 
 .hero-image {
     height: 100vh;
     width: 100%;
     object-fit: cover;
+}
+
+
+/* Mobile styles */
+@media screen and (max-width: 720px) {
+    .content-and-image {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-and-content {
+        margin: 2rem;
+    }
+
+    .logo {
+        height: 1.5rem;
+    }
+
+    .content-and-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .hero {
+        font-size: 2.5rem;
+        text-align: center;
+        letter-spacing: .75rem;
+        line-height: 1.1;
+    }
+
+    .hero-copy {
+        font-size: .9rem;
+        line-height: 1.6;
+        text-align: center;
+    }
+
+    .email-form {
+        margin-top: .75rem;
+        padding: .9rem 2rem;
+        border: 1px solid var(--desat-red);
+        border-radius: 20rem;
+    }
+
+    .email-input::placeholder {
+        font-family: 'Josefin Sans';
+        color: hsla(0, 36%, 70%, 0.795);
+        font-size: 14px;
+    }
+
+    .button {
+        padding: .9rem 1.7rem;
+        border-radius: 10rem;
+        box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.5);
+        transition: all .25s ease-out;
+    }
+
+    .hero-image {
+        height: 320px;
+        width: 100%;
+        object-fit: cover;
+    }
 }
