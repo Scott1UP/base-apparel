@@ -25,14 +25,17 @@
           <h1 class="hero"><span class="thin-hero">We're<br></span> coming<br> soon</h1>
           <p class="hero-copy">Hello fellow shoppers! We're currently building our new fashion store. 
           Add your email below to stay up-to-date with announcements and our launch deals.</p>
-
-          <form class="email-form">
+          
+        <div class="email-form-and-error-msg">
+          <form class="email-form" id="emailForm">
             <input class="email-input" id="emailInput" type="text" placeholder="Email Address" role="input" alt="Email address input">
             <img src="./images/icon-error.svg" class="error-icon disabled" alt="Error icon">
             <div class="button" role="button">
               <img src="./images/icon-arrow.svg" class="arrow" alt="Arrow icon to submit form.">
             </div>
           </form>
+          <p id="errorText" class="error-text disabled">Please provide a valid email</p>
+        </div>
 
         </div>
       </div>
@@ -42,6 +45,7 @@
       <img src="./images/hero-desktop.jpg" class="hero-image" alt="Brunette woman in a peach blouse posing against a floral backdrop.">
     </div>
 
+    <script src="./index.js"></script>
   </main>
 </body>
 </html>

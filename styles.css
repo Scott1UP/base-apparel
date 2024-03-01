@@ -24,6 +24,9 @@ body {
     font-family: 'Josefin Sans';
 }
 
+input {
+    font-family: 'Josefin Sans';
+}
 
 /* Desktop styles */
 .content-and-image {
@@ -87,17 +90,29 @@ body {
     border-radius: 20rem;
 }
 
+.email-form.error {
+    border: 2px solid hsl(0, 93%, 68%);
+}
+
+.error-text {
+    font-size: .875rem;
+    margin: .75rem 0 0 2rem;
+    color: var(--soft-red);
+}
+
 .email-input {
     border: none;
     outline: none;
     width: 100%;
     background-color: transparent;
+    font-size: 1rem;
+    color: var(--dk-gry-red);
 }
 
 .email-input::placeholder {
     font-family: 'Josefin Sans';
     color: hsla(0, 36%, 70%, 0.795);
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .email-input:focus {
@@ -119,15 +134,16 @@ body {
     background-image: linear-gradient(135deg, var(--grad-2));
     position: absolute;
     right: 0;
+    margin-right: -.25rem;
     padding: 1.25rem 2.75rem;
     border-radius: 10rem;
-    box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.5);
+    box-shadow: 0 .75rem 1.5rem hsla(0, 36%, 70%, 0.5);
     transition: all .25s ease-out;
 }
 
 .button:hover {
     background-image: linear-gradient(135deg, var(--grad-3));
-    box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.824);
+    box-shadow: 0 .75rem 1.5rem hsla(0, 36%, 70%, 0.824);
 }
 
 .hero-image {
@@ -196,19 +212,23 @@ body {
 
     .email-form {
         margin-top: .75rem;
-        padding: .9rem 1.25rem;
+        padding: 1rem 1.25rem;
         border: 1px solid var(--desat-red);
         border-radius: 20rem;
     }
 
+    .email-input {
+        font-size: .875rem;
+    }
+
     .email-input:focus {
-        font-size: 14px;
+        font-size: .875rem;
     }
 
     .email-input::placeholder {
         font-family: 'Josefin Sans';
         color: hsla(0, 36%, 70%, 0.795);
-        font-size: 14px;
+        font-size: .875rem;
     }
 
     .error-icon {
@@ -219,9 +239,9 @@ body {
     }
 
     .button {
-        padding: .9rem 1.7rem;
+        padding: 1rem 1.7rem;
         border-radius: 10rem;
-        box-shadow: 0px 12px 24px hsla(0, 36%, 70%, 0.5);
+        box-shadow: 0 .75rem 1.5rem hsla(0, 36%, 70%, 0.5);
         transition: all .25s ease-out;
     }
 
@@ -234,7 +254,7 @@ body {
     }
 
     .hero-image {
-        height: 252px;
+        height: 15.75rem;
         margin: 1.5rem 0 3.5rem;
         object-fit: cover;
     }
